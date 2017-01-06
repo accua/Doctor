@@ -9,17 +9,20 @@
     <script type="text/javascript" src="build/js/app.js"></script>
   </head>
   <body>
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
       <h1>Find a doctor</h1>
+      <p>Enter your ailment below.</p>
     </div>
     <div class="container">
-      <div class="input-field">
-        <form>
-          <input id="medicalIssue" type="text">
-          <button class="btn btn-default" type="submit"><i class="material-icons">search</i>Search!</button>
-        </form>
+      <div class="row">
+        <div class="input-field">
+          <form id="ailmentForm" class="form">
+            <input id="medicalIssue" type="text">
+            <button id="ailmentButton" class="btn btn-default" type="submit"><i class="material-icons">search</i>Search!</button>
+          </form>
+        </div>
       </div>
-      <ul id="recentStolen"></ul>
+      <ul id="doctorList"></ul>
     </div>
   </body>
 </html>
