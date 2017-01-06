@@ -2,18 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hide your kids, hide your bikes.</title>
+    <title>Find a Doctor!</title>
     <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="build/js/app.js"></script>
   </head>
   <body>
-    <form>
-      <input id="zipcode" type="text">
-      <button class="btn btn-default" type="submit"><i class="material-icons">add</i>Search!</button>
-    </form>
-    <ul id="recentStolen"></ul>
-    <a href="#" class="waves-effect waves-light btn">Waves</a>
+    <div class="jumbotron">
+      <h1>Find a doctor</h1>
+    </div>
+    <div class="container">
+      <div class="input-field">
+        <form>
+          <input id="medicalIssue" type="text">
+          <button class="btn btn-default" type="submit"><i class="material-icons">search</i>Search!</button>
+        </form>
+      </div>
+      <ul id="recentStolen"></ul>
+    </div>
   </body>
 </html>
