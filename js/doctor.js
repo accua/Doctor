@@ -13,5 +13,4 @@ Doctor.prototype.getDoctors = function(medicalIssue, listDoctors) {
     });
 };
 
-
 exports.doctorModule = Doctor;

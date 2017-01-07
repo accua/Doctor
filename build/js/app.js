@@ -17,7 +17,6 @@ Doctor.prototype.getDoctors = function(medicalIssue, listDoctors) {
     });
 };
 
-
 exports.doctorModule = Doctor;
 
 },{"./../.env":1}],3:[function(require,module,exports){
@@ -32,26 +31,27 @@ $(function() {
       if(doctor.practices[0].phones.length == 2) {
         phone = doctor.practices[0].phones[1].number
       };
-      list += ('<div class="col-md-4">' +
-                '<div class="panel">' +
-                  '<div class="panel-heading">' +
-                    '<h3 class="panel-title">' + doctor.profile.first_name + " " + doctor.profile.last_name +
-                    '</h3>' +
+      list += ('<div class="col s10 offset-s1 m4 offset-s2 l4">' +
+                '<div class="card">' +
+                  '<div class="card-image waves-effect waves-block waves-light">' +
+                    '<img class="activator" src="' + doctor.profile.image_url + '">' +
                   '</div>' +
-                  '<div class = "panel-body">' +
-                    '<img class="img-responsive" src="' +  doctor.profile.image_url + '">' +
-                    '<p><strong>Specialties: </strong>' + doctor.specialties[0].name + '</p>' +
-                    '<p><strong>Location: </strong>' + doctor.practices[0].visit_address.street + '</p>' +
-                    '<p>' + doctor.practices[0].visit_address.city + '</p>' +
-                    '<p>' + doctor.practices[0].visit_address.state_long+ '</p>' +
-                    '<p><strong>Phone Number: </strong>' + phone + '</p>' +
+                  '<div class="card-content">' +
+                    '<span class="card-title activator grey-text text-darken-4">' + doctor.profile.first_name + " " + doctor.profile.last_name + '<i class="material-icons right">more_vert</i></span>' +
+                  '</div>' +
+                  '<div class="card-reveal">' +
+                    '<span class="card-title grey-text text-darken-4">' + doctor.specialties[0].name +'<i class="material-icons right">close</i></span>' +
+                    '<p><strong>Location:<br> </strong>' + doctor.practices[0].visit_address.street + '<br>' +
+                    doctor.practices[0].visit_address.city + '<br>' +
+                    doctor.practices[0].visit_address.state_long + '</p>' +
+                    '<p><strong>Phone Number: </strong>' + phone + '<br>' +
                   '</div>' +
                 '</div>' +
               '</div>'
-              );
-    });
-    $('#doctorList').html(list);
-  }
+    );
+  });
+  $('#doctorList').html(list);
+};
   $('#ailmentForm').submit(function(event) {
     event.preventDefault();
     ailment = $('#medicalIssue').val();
